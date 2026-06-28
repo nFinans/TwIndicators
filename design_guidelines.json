@@ -1,0 +1,150 @@
+{
+  "theme": "Dark",
+  "archetype": "Archetype 7 (Electric & Neon) combined with Archetype 4 (Swiss & High-Contrast Layout)",
+  "vibe": "Hedge-fund / quant desk meets cyberpunk trading terminal. Cinematic, asymmetric, high-contrast.",
+  "colors": {
+    "background": {
+      "default": "#0a0e14",
+      "surface": "#0e141b",
+      "surface_elevated": "#161d26"
+    },
+    "text": {
+      "primary": "#ffffff",
+      "secondary": "#8b949e",
+      "muted": "#4b5563"
+    },
+    "accent": {
+      "primary": "#e2f331",
+      "primary_hover": "#cde010",
+      "secondary": "#00ffa3",
+      "danger": "#ff3366"
+    },
+    "border": {
+      "default": "rgba(255, 255, 255, 0.07)",
+      "hover": "#2d3748",
+      "active": "#e2f331"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "display": "'Cormorant Garamond', serif",
+      "heading": "'Chivo', sans-serif",
+      "body": "'IBM Plex Sans', sans-serif",
+      "mono": "'Azeret Mono', monospace"
+    },
+    "scale": {
+      "h1": "text-5xl sm:text-6xl+ tracking-tighter font-black",
+      "h2": "text-3xl sm:text-4xl tracking-tight font-bold",
+      "h3": "text-xl sm:text-2xl tracking-tight font-semibold",
+      "body": "text-base leading-relaxed text-[#8b949e]",
+      "label": "text-xs uppercase tracking-[0.2em] font-mono text-[#e2f331]",
+      "price": "text-4xl font-mono font-bold tracking-tight",
+      "numbering": "text-8xl sm:text-[10vw] font-display font-light leading-none opacity-20"
+    }
+  },
+  "layout_and_spacing": {
+    "container": "max-w-7xl mx-auto px-6 lg:px-12",
+    "section_padding": "py-24 sm:py-32",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-4 gap-4",
+    "divider": "border-t border-[rgba(255,255,255,0.07)]"
+  },
+  "components": {
+    "header": {
+      "anatomy": "Sticky glassmorphism header `backdrop-blur-xl bg-[#0a0e14]/70 z-50 border-b border-[rgba(255,255,255,0.07)]`.",
+      "elements": [
+        "Logo left",
+        "Navigation links centered (Algoritmalar, Paket, Hakkımızda, İletişim)",
+        "Language Toggle `[ TR / EN ]` right, monospace font",
+        "Primary CTA 'Üye Ol'"
+      ]
+    },
+    "hero": {
+      "anatomy": "Asymmetrical left-aligned content.",
+      "styles": "Min-height 90vh, pt-32, flex flex-col justify-center relative overflow-hidden",
+      "elements": [
+        "Background image overlaid with `mix-blend-overlay` and `bg-[#0a0e14]/80`.",
+        "H1: 'Data is new oil. AI is new electricity.'",
+        "Hero Copy: 'TradingView algoritmaları ile...'",
+        "CTA: 'Algoritmaları Keşfet' (Neon button)"
+      ]
+    },
+    "algorithm_section": {
+      "anatomy": "Two-column grid: `md:grid-cols-[1fr_2fr]` gap-16.",
+      "elements": [
+        "Left column: Sticky. Large editorial number (e.g., '01') + Section Title.",
+        "Right column: Hero copy, TradingView Script Image, Pricing Grid.",
+        "Pricing Grid: 4-tier cards (3 ay, 6 ay, 12 ay, Tek Seferlik)."
+      ]
+    },
+    "pricing_card": {
+      "anatomy": "Flat minimalist technical grid style. `bg-[#0e141b] border border-[rgba(255,255,255,0.07)] p-6 flex flex-col relative overflow-hidden`.",
+      "highlight_12_month": "Add `border-[#e2f331]` and a subtle inner glow.",
+      "elements": [
+        "Discount Badge: Absolute top-right, mint green `#00ffa3` text, dark bg.",
+        "Plan Name + Price (Monospace)",
+        "Features list with checkmarks",
+        "CTA Button: 'Seç'. When clicked, toggles visibility of Whop Checkout iframe inline below the button."
+      ]
+    },
+    "whop_iframe_container": {
+      "anatomy": "Div that expands below the 'Seç' button when active. Min-height 600px. Smooth transition using Framer Motion or Tailwind.",
+      "attributes": "data-whop-checkout-plan-id='plan_xxx', data-whop-checkout-theme='dark'"
+    },
+    "all_in_one_pack": {
+      "anatomy": "Massive standout section. Pure black background `bg-black border border-[#e2f331]/30 p-12`.",
+      "elements": [
+        "Hype banner: 'Şimdi Üye olun Tanışma Bonusunu Kaçırmayın!'",
+        "Full pricing block with original prices line-through, lifetime access."
+      ]
+    }
+  },
+  "micro_interactions": {
+    "hover": "Buttons have `hover:bg-[#cde010] hover:text-black` transition. Cards lift slightly `-translate-y-1` and border illuminates `hover:border-[#e2f331]/50`.",
+    "scroll": "Use Lenis for smooth scrolling. Fade in up for algorithm sections."
+  },
+  "media": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Abstract data grid chart for the cinematic hero background."
+    },
+    "algo_01": {
+      "url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBjaGFydCUyMG1vbml0b3IlMjBkYXJrfGVufDB8fHx8MTc4MjY0NTkxN3ww&ixlib=rb-4.1.0&q=85",
+      "description": "TradingView preview for ML Quant & Liquidity Engine"
+    },
+    "algo_02": {
+      "url": "https://images.unsplash.com/photo-1639754390580-2e7437267698?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHw0fHxmaW5hbmNpYWwlMjBjaGFydCUyMG1vbml0b3IlMjBkYXJrfGVufDB8fHx8MTc4MjY0NTkxN3ww&ixlib=rb-4.1.0&q=85",
+      "description": "TradingView preview for Right Side Strategy Osc."
+    },
+    "algo_03": {
+      "url": "https://images.unsplash.com/photo-1745509267699-1b1db256601e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwyfHxmaW5hbmNpYWwlMjBjaGFydCUyMG1vbml0b3IlMjBkYXJrfGVufDB8fHx8MTc4MjY0NTkxN3ww&ixlib=rb-4.1.0&q=85",
+      "description": "TradingView preview for Liquidity Based SR"
+    },
+    "algo_04": {
+      "url": "https://images.unsplash.com/photo-1689732888407-310424e3a372?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwzfHxmaW5hbmNpYWwlMjBjaGFydCUyMG1vbml0b3IlMjBkYXJrfGVufDB8fHx8MTc4MjY0NTkxN3ww&ixlib=rb-4.1.0&q=85",
+      "description": "TradingView preview for Sentiment & Momentum"
+    },
+    "algo_05": {
+      "url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBjaGFydCUyMG1vbml0b3IlMjBkYXJrfGVufDB8fHx8MTc4MjY0NTkxN3ww&ixlib=rb-4.1.0&q=85",
+      "description": "TradingView preview for tRend Cycles for Mag7"
+    }
+  },
+  "testing_attributes": {
+    "header_nav_algorithms": "data-testid='nav-link-algorithms'",
+    "header_nav_packages": "data-testid='nav-link-packages'",
+    "header_nav_about": "data-testid='nav-link-about'",
+    "header_nav_contact": "data-testid='nav-link-contact'",
+    "language_toggle": "data-testid='lang-toggle-button'",
+    "pricing_card_select_button": "data-testid='pricing-select-btn-{algo_id}-{plan_id}'",
+    "whop_iframe": "data-testid='whop-checkout-iframe-{algo_id}-{plan_id}'",
+    "hero_cta": "data-testid='hero-cta-explore'"
+  },
+  "instructions_to_main_agent": [
+    "Use pure HTML and Tailwind for layouts, avoiding overly rigid Shadcn sections for the main flow.",
+    "Add Unbounded, Chivo, IBM Plex Sans, Azeret Mono, and Cormorant Garamond fonts to the project (e.g. via Google Fonts in index.html).",
+    "Configure tailwind.config.js with the custom colors defined in 'colors' section.",
+    "Build the hero with a dark overlay over the provided background image.",
+    "Implement the algorithm sections (01 to 05) using the exact Turkish titles provided in the problem statement.",
+    "For the Whop integration: Build the pricing cards so that clicking 'Seç' toggles a state (e.g., expandedPlanId) which renders the Whop iframe container directly inside/below that specific card, expanding its height without breaking the grid.",
+    "Apply smooth scroll via Lenis."
+  ]
+}
