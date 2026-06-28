@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Check, Sparkles } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 import { ALL_IN_ONE } from "@/data/algorithms";
-import WhopCheckout from "@/components/WhopCheckout";
+import WhopCheckoutModal from "@/components/WhopCheckoutModal";
 
 const CTA_KEY = {
   "3m": "cta3",
@@ -14,7 +14,7 @@ const CTA_KEY = {
 
 export default function AllInOnePack() {
   const { t } = useLang();
-  const [expanded, setExpanded] = useState(null);
+  const [selectedPlanId, setSelectedPlanId] = useState(null);
 
   return (
     <section
@@ -59,7 +59,8 @@ export default function AllInOnePack() {
         <div className="mt-16 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {ALL_IN_ONE.plans.map((plan) => {
             const popular = plan.popular;
-            const isOpen = expanded === plan.planId;
+            const isModalOpen = selectedPlanId === plan.planId;
+
             return (
               <div
                 key={plan.planId}
@@ -97,9 +98,7 @@ export default function AllInOnePack() {
                 <button
                   type="button"
                   data-testid={`aio-select-btn-${plan.tier}`}
-                  onClick={() =>
-                    setExpanded(isOpen ? null : plan.planId)
-                  }
+                  onClick={() => setSelectedPlanId(plan.planId)}
                   className={[
                     "mt-6 w-full rounded-xl px-5 py-3.5 font-heading text-sm font-bold uppercase tracking-[0.14em] transition-all duration-200",
                     popular
@@ -107,7 +106,7 @@ export default function AllInOnePack() {
                       : "border border-white/15 bg-white/[0.02] text-white hover:border-[#e2f331] hover:bg-[#e2f331] hover:text-black",
                   ].join(" ")}
                 >
-                  {isOpen ? "✕  Kapat / Close" : t.allInOne[CTA_KEY[plan.tier]]}
+                  {t.allInOne[CTA_KEY[plan.tier]]}
                 </button>
 
                 <ul className="mt-6 space-y-2.5 border-t border-white/[0.07] pt-5 text-sm text-white/70">
@@ -119,22 +118,14 @@ export default function AllInOnePack() {
                   ))}
                 </ul>
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <WhopCheckout
-                        planId={plan.planId}
-                        testId={`aio-whop-iframe-${plan.tier}`}
-                      />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <WhopCheckoutModal
+                  open={isModalOpen}
+                  onOpenChange={(isOpen) => setSelectedPlanId(isOpen ? plan.planId : null)}
+                  planId={plan.planId}
+                  title={t.allInOne.title}
+                  subtitle={`Plan: ${plan.tier.toUpperCase()} · $${plan.price}`}
+                  testId={`aio-whop-modal-${plan.tier}`}
+                />
               </div>
             );
           })}
