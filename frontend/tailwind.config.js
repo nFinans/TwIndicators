@@ -5,10 +5,10 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                display: ["Cormorant Garamond", "serif"],
-                heading: ["Chivo", "system-ui", "sans-serif"],
-                body: ["IBM Plex Sans", "system-ui", "sans-serif"],
-                mono: ["Azeret Mono", "ui-monospace", "monospace"],
+                display: ["JetBrains Mono", "monospace"],
+                heading: ["JetBrains Mono", "monospace"],
+                body: ["JetBrains Mono", "monospace"],
+                mono: ["JetBrains Mono", "monospace"],
             },
             colors: {
                 ink: {
