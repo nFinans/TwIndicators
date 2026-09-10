@@ -40,7 +40,7 @@ export default function Header() {
             nF
           </span>
           <span className="font-heading text-sm font-semibold tracking-[0.2em] text-white uppercase">
-            nFinans<span className="text-[#e2f331]">/</span> TW Indicators
+            PriVYAlgo<span className="text-[#e2f331]">/</span> TW Indicators
           </span>
         </a>
 
